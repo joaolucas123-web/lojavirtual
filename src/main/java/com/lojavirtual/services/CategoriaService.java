@@ -20,19 +20,18 @@ public class CategoriaService {
 	
 	public Optional<Categoria> find(Integer id) {
 		Optional<Categoria> categoria = repository.findById(id);
-		return categoria;	
-	}
-
-	@Transactional
-	public Categoria insert(Categoria categoria) {
-		categoria.setId(null);
-		categoria = repository.save(categoria);
 		return categoria;
 	}
 	
-	public List<Categoria> findAll(){
-		return repository.findAll();	
-		
-	}
+	@Transactional
+    public Categoria insert(Categoria categoria) {
+        categoria.setId(null);
+        categoria = repository.save(categoria);
+        return categoria;
+    }
 	
+	public List<Categoria> findAll(){
+		return repository.findAll();
+	}
+
 }
